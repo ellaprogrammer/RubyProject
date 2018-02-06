@@ -2,7 +2,7 @@ class PicsController < ApplicationController
 	before_action :find_pic, only: [:show, :edit, :update, :destroy]
 
 	def index
-		#will correspond to the index.html.haml file
+		@pics = Pic.all.order("created_at DESC")
 	end
 
 	def show
@@ -21,7 +21,22 @@ class PicsController < ApplicationController
 		else
 			render 'new'
 		end
+	end
 
+	def edit
+	end
+
+	def update
+		if @pic.update(pic_params)
+			redirect_to @pic, notice: "Congrats, pic was updated"
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@pic.destroy
+		redirect_to root_path
 	end
 
 	private #so it applies to all the other actions instead of repeating yourself
