@@ -10,11 +10,11 @@ class PicsController < ApplicationController
 
 	def new
 		#will correspond to the new.html.haml file
-		@pic = Pic.new #creates an instance of a Pic
+		@pic = current_user.pics.build #creates an instance of a Pic
 	end
 
 	def create
-		@pic = Pic.new(pic_params)
+		@pic = current_user.pics.build(pic_params)
 
 		if @pic.save
 			redirect_to @pic, notice: "Yes! It was posted!"
