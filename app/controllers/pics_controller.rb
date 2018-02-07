@@ -42,10 +42,11 @@ class PicsController < ApplicationController
 	private #so it applies to all the other actions instead of repeating yourself
 
 	def pic_params
-		params.require(:pic).permit(:title, :description)
+		params.require(:pic).permit(:title, :description, :avatar, :avatar_file_name)
 	end
 
 	def find_pic
 		@pic = Pic.find(params[:id])
 	end
 end
+

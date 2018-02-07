@@ -33,7 +33,10 @@ gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'simple_form', '~> 3.2', '>= 3.2.1' #3.0.2
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6' #3.2.0.2
 gem 'devise', '~> 4.2'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'paperclip', '~> 5.2.1'
+gem 'bcrypt', '3.1.11', platforms: [:ruby, :x64_mingw]
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

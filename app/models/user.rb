@@ -1,5 +1,5 @@
-class User < ApplicationRecord
-	has_many :pics
+class User < ActiveRecord::Base
+  has_many :pics
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
